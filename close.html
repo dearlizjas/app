@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dear Liz 關帳</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Dear Liz 關帳">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#F3ECE3">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="manifest" href="manifest-close.webmanifest">
+<style>
+  html, body { margin: 0; height: 100%; background: #F3ECE3; overflow: hidden; }
+  body { padding-top: env(safe-area-inset-top); box-sizing: border-box; }
+  iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .load { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+    font: 500 28px/1.4 Georgia, "Times New Roman", serif; letter-spacing: 6px; color: #7E6F67; background: #F3ECE3; transition: opacity .4s; }
+  .load.off { opacity: 0; pointer-events: none; }
+</style>
+</head>
+<body>
+<div class="load" id="load">DEAR LIZ</div>
+<iframe id="app" src="https://script.google.com/macros/s/AKfycbxm_EpAobBBB8ryXHnyowXO0bHRpQQQ6QPTMe_azHbS169dHxOKFgS92g-IeSPZF7O9qA/exec?view=close" allow="clipboard-read; clipboard-write; web-share; camera" onload="document.getElementById('load').classList.add('off')"></iframe>
+</body>
+</html>
