@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dear Liz｜拍攝確認單</title>
+<meta name="theme-color" content="#F3ECE3">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<style>
+  html, body { margin: 0; height: 100%; background: #F3ECE3; }
+  iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .load { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+    font: 500 28px/1.4 Georgia, "Times New Roman", serif; letter-spacing: 6px; color: #7E6F67; background: #F3ECE3; transition: opacity .4s; }
+  .load.off { opacity: 0; pointer-events: none; }
+</style>
+</head>
+<body>
+<div class="load" id="load">DEAR LIZ</div>
+<iframe id="app" allow="clipboard-write"></iframe>
+<script>
+  // 客人短連結：c.html?短碼 → Dear Liz 系統的客人確認單頁
+  var APP = 'https://script.google.com/macros/s/AKfycbxm_EpAobBBB8ryXHnyowXO0bHRpQQQ6QPTMe_azHbS169dHxOKFgS92g-IeSPZF7O9qA/exec';
+  var code = (location.search.replace(/^\?/, '').split('&')[0] || location.hash.replace(/^#/, '')).replace(/[^A-Za-z0-9]/g, '');
+  var f = document.getElementById('app');
+  f.onload = function () { document.getElementById('load').classList.add('off'); };
+  f.src = APP + '?k=' + encodeURIComponent(code);
+</script>
+</body>
+</html>
